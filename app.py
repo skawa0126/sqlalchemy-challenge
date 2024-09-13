@@ -189,6 +189,7 @@
     "    session = Session(engine)\n",
     "\n",
     "    # Query tobs data from last 12 months from the most recent date from Measurement table\n",
+    "    tobs_data = session.query(measurement.date, measurement.tobs).filter(measurement.station == 'USC00519281').\\\n",
     "                        filter(measurement.date >'2016-08-23').all()\n",
     "\n",
     "    # Close the session                   \n",
